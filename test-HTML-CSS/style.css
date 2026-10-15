@@ -1,0 +1,81 @@
+body {
+  background-color: black;
+  margin: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: greenyellow;
+}
+header .icon {
+  border-radius: 12px;
+  background-color: greenyellow;
+  padding: 10px 10px 10px 10px;
+}
+header .secure-online {
+  border: 2px solid #00ff00;
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+/* עיגול מרכזי */
+.radar,
+.sweep {
+  position: absolute;
+}
+.radar {
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin: -117px;
+  width: 248px;
+  height: 248px;
+  border-radius: 50%;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.5),
+    inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+  background: linear-gradient(
+        transparent 49.75%,
+        #0e4c42 0 50.25%,
+        transparent 0
+      )
+      50% no-repeat,
+    linear-gradient(90deg, transparent 49.75%, #0e4c42 0 50.25%, transparent 0)
+      50% no-repeat,
+    linear-gradient(#333, #111);
+  background-size: 100%, 218px 218px, 218px 218px, 100%;
+}
+.sweep {
+  box-sizing: border-box;
+  top: 16px;
+  left: 16px;
+  border-right: solid 1px hsla(145, 50%, 40%, 0.3);
+  width: 108px;
+  height: 108px;
+  border-radius: 100% 0 0 0;
+  transform-origin: 100% 100%;
+  background: linear-gradient(
+    50deg,
+    rgba(27, 64, 35, 0) 56%,
+    hsla(145, 50%, 40%, 1)
+  );
+  animation: sweep 5s infinite linear;
+}
+@keyframes sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.radar-container {
+  width: 95%;
+  background-color: grey;
+}
