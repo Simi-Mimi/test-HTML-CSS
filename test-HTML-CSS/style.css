@@ -8,23 +8,31 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   color: greenyellow;
+  font-family: monospace;
 }
 header .icon {
-  border-radius: 12px;
+  border-radius: 50%;
   background-color: greenyellow;
   padding: 10px 10px 10px 10px;
 }
 header .secure-online {
   border: 2px solid #00ff00;
+  background-color: #078a0770;
+
   border-radius: 50px;
   padding: 0.4rem 1rem;
   font-size: 0.9rem;
   margin: 0;
 }
+header .secure-online:hover {
+  border: 3px solid #00ff00;
+  background-color: #00ff0056;
+}
 /* עיגול מרכזי ======================================================*/
 .radar,
 .radar {
   overflow: hidden;
+  position: relative;
   width: 248px;
   height: 248px;
   border-radius: 50%;
@@ -44,6 +52,7 @@ header .secure-online {
 }
 .sweep {
   box-sizing: border-box;
+  position: absolute;
   top: 16px;
   left: 16px;
   border-right: solid 1px hsla(145, 50%, 40%, 0.3);
@@ -78,18 +87,37 @@ main {
   background-color: #111116;
   border: 1px solid #2a2a35;
 }
+.radar-container:hover {
+  border: 1px solid #00ff22;
+}
 
 .info-panel {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   flex-grow: 1;
+  padding-left: 15%;
 }
-.info-panel h1{
-  color: #00ff40;
+
+.info-panel h1 {
+  color: #00ff00;
+  font-size: 2.5rem;
+  margin: 0 0 5px 0;
+  font-weight: 500;
+  font-family: monospace;
 }
-.info-panel p{
-  color: grey;
+
+.info-panel p {
+  color: #8a8a9e;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 30px 0;
+  font-weight: bold;
+}
+
+.info-panel p:last-child {
+  margin-bottom: 0;
 }
 /* כפתורים===================================================================== */
 .btn-container {
@@ -110,6 +138,9 @@ main {
   align-items: center;
   gap: 8px;
 }
+.btn-container button:hover {
+  border: 1px solid #2bff00;
+}
 /* כרטיסים -=====================================================================*/
 .cards-container {
   display: flex;
@@ -126,23 +157,37 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
   border-top: 1px solid #2a2a35;
   border-right: 1px solid #2a2a35;
   border-bottom: 1px solid #2a2a35;
+  transition: transform 0.4s ease;
 }
 
 .card.card-green {
   border-left: 3px solid #00ff00;
 }
+.card.card-green:hover {
+  border: 1px solid #00ff00;
+  border-left-width: 3px;
+}
 
 .card.card-yellow {
   border-left: 3px solid #ffb700;
 }
+.card.card-yellow:hover {
+  border: 1px solid #ffb700;
+  border-left-width: 3px;
+}
 .card.card-red {
   border-left: 3px solid #ff0000;
 }
-
+.card.card-red:hover {
+  border: 1px solid #ff0000;
+  border-left-width: 3px;
+}
+.card:hover {
+  transform: rotate(2deg);
+}
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -200,8 +245,116 @@ main {
   height: 100%;
   border-radius: 3px;
 }
+.card:nth-child(1) .progress-fill {
+  width: 65%;
+}
 
+.card:nth-child(2) .progress-fill {
+  width: 40%;
+}
+
+.card:nth-child(3) .progress-fill {
+  width: 15%;
+}
+
+.card:nth-child(4) .progress-fill {
+  width: 80%;
+}
 .progress-percent {
   font-size: 0.8rem;
   color: #00ff00;
+}
+
+/* שורה אדומה========================================== */
+
+.threat-status-bar {
+  width: 93%;
+  margin: 20px 0;
+  padding: 1rem;
+  border: 1px solid #ff3366;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(60, 30, 30, 0.721);
+}
+
+.status-dot {
+  position: absolute;
+  left: 20px;
+  width: 8px;
+  height: 8px;
+  background-color: #ff3366;
+  border-radius: 50%;
+}
+
+.status-text-alert {
+  color: #ff3366;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+.threat-status-bar:hover {
+  border: 2px solid #ff3366;
+  background-color: rgba(84, 33, 33, 0.721);
+}
+/* פוטר================================================================= */
+footer {
+  width: 100%;
+  background-color: #050505;
+  border-top: 1px solid #1a1a24;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 40px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #8a8a9e;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+.nav-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+.nav-item:hover {
+  color: #00ff00;
+  border-bottom: 2px solid #00ff00;
+}
+
+.help-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #1f1f2e;
+  color: #a0a0b0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid #2a2a35;
 }
