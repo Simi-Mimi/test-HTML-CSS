@@ -1,12 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>test-HTML-CSS</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <h2 class="icon">🥚</h2>
+      <h2>SIGINT OPS</h2>
+      <h2 class="secure-online">
+        <span class="blink-dot"></span>secure<span class="blink-dot"></span>online
+      </h2>
+    </header>
+    <main>
+      <div class="radar-container">
+        <div class="radar">
+          <div class="sweep"></div>
+          <div class="dot dot-1"></div>
+          <div class="dot dot-2"></div>
+          <div class="dot dot-3"></div>
+        </div>
+        <div class="info-panel">
+          <h1>24</h1>
+          <p>active signals</p>
+          <h1>07</h1>
+          <p>priority alerts</p>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button><span>⚡</span>new brief</button>
+        <button><span>&lt;&gt;</span>decode</button>
+        <button><span>✈️</span>request drown</button>
+      </div>
+      <!-- כרטיסים================================================ -->
+      <div class="cards-container">
+        <!-- כרטיס ראשון============ -->
+        <div class="card card-red">
+          <div class="card-header">
+            <span class="status-badge critical">CRITICAL</span>
+            <span class="status-text">In Progress</span>
+          </div>
+          <h3 class="card-title">Operation Nightfall</h3>
+          <div>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="progress-percent">65%</span>
+          </div>
+        </div>
+        <!-- כרטיס שני============ -->
+        <div class="card card-yellow">
+          <div class="card-header">
+            <span class="status-badge high">HIGH</span>
+            <span class="status-text">Analyzing</span>
+          </div>
+          <h3 class="card-title">Signal Intercept Alpha</h3>
+          <div>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="progress-percent">40%</span>
+          </div>
+        </div>
+        <!-- כרטיס שלישי============ -->
+
+        <div class="card card-green">
+          <div class="card-header">
+            <span class="status-badge medium">MEDIUM</span>
+            <span class="status-text">Analyzing</span>
+          </div>
+          <h3 class="card-title">Signal Intercept Alpha</h3>
+          <div>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="progress-percent">15%</span>
+          </div>
+        </div>
+        <!-- כרטיס רביעי============ -->
+        <div class="card card-yellow">
+          <div class="card-header">
+            <span class="status-badge high">HIGH</span>
+            <span class="status-text">Active</span>
+          </div>
+          <h3 class="card-title">Cyber Defense Grid</h3>
+          <div>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="progress-percent">80%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="threat-status-bar">
+        <div class="status-dot"></div>
+        <span class="status-text-alert">THREAT DETECTED</span>
+      </div>
+    </main>
+    <footer>
+      <nav class="footer-nav">
+        <div class="nav-item">
+          <span class="nav-icon">📈</span>
+          <span class="nav-text">Dashboard</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-icon">📡</span>
+          <span class="nav-text">Feed</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-icon">📄</span>
+          <span class="nav-text">Brief</span>
+        </div>
+      </nav>
+      <div class="help-btn">?</div>
+    </footer>
+  </body>
 </html>
