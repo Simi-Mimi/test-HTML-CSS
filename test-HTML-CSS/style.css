@@ -10,10 +10,38 @@ header {
   color: greenyellow;
   font-family: monospace;
 }
+.blink-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #00ff00;
+  margin: 0 6px;
+  vertical-align: middle;
+
+  animation: blink-color 2s infinite ease-in-out;
+}
+@keyframes blink-color {
+  0%,
+  100% {
+    background-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  50% {
+    background-color: #073a07;
+    box-shadow: none;
+  }
+}
 header .icon {
   border-radius: 50%;
   background-color: greenyellow;
   padding: 10px 10px 10px 10px;
+  transition: all 0.4s ease;
+}
+header .icon:hover{
+  transform: rotate(180deg); 
+  box-shadow: 0 0 20px #00ff00; 
+  background-color: #00ff00;
 }
 header .secure-online {
   border: 2px solid #00ff00;
@@ -38,34 +66,65 @@ header .secure-online:hover {
   border-radius: 50%;
   border: 2px solid #00ff00;
   box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.5),
-    inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+    inset 0 0 0 1px hsla(0, 38%, 77%, 0.15);
   background: linear-gradient(
         transparent 49.75%,
         #0e4c42 0 50.25%,
         transparent 0
       )
       50% no-repeat,
-    linear-gradient(90deg, transparent 49.75%, #0e4c42 0 50.25%, transparent 0)
-      50% no-repeat,
-    linear-gradient(#333, #111);
-  background-size: 100%, 218px 218px, 218px 218px, 100%;
+    linear-gradient(90deg, transparent 49.75%, #0e4c42 0 50.25%, transparent 0);
 }
 .sweep {
   box-sizing: border-box;
   position: absolute;
-  top: 16px;
-  left: 16px;
-  border-right: solid 1px hsla(145, 50%, 40%, 0.3);
-  width: 108px;
-  height: 108px;
-  border-radius: 100% 0 0 0;
-  transform-origin: 100% 100%;
-  background: linear-gradient(
-    50deg,
-    rgba(27, 64, 35, 0) 56%,
-    hsla(145, 50%, 40%, 1)
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(0, 255, 0, 0.4) 45deg,
+    transparent 90deg,
+    transparent 360deg
   );
+
   animation: sweep 5s infinite linear;
+}
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00ff00;
+  box-shadow: 0 0 8px 2px rgba(0, 255, 0, 0.6);
+  animation: blink 1.5s infinite ease-in-out;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+.dot-1 {
+  top: 25%;
+  left: 55%;
+}
+
+.dot-2 {
+  top: 45%;
+  left: 25%;
+}
+
+.dot-3 {
+  top: 65%;
+  left: 65%;
 }
 @keyframes sweep {
   to {
@@ -316,6 +375,7 @@ footer {
   justify-content: space-between;
   width: 85%;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .nav-item {
